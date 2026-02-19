@@ -15,8 +15,9 @@ void print_list(struct node *list) {
 
 void free_list(struct node *list) {
     while (list) {
-        struct node *tmp = list->next;
+        struct node *tmp = list;
         list = list->next;
+        printf("freeing node %p with value %d\n", tmp, tmp->val);
         free(tmp);
     }
 }
